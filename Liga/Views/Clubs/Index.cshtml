@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Liga.Models.Club>
+
+@{
+    ViewBag.Title = "Clubs";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            email
+        </th>
+        <th>
+            Date of foundation
+        </th>
+        <th>
+            Phone number
+        </th>
+        @*<th>
+            Managers name
+        </th>*@
+        <th>
+            Stadium name
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "Details", new { id = item.ID })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfFoundation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            @*<td>
+                @Html.ActionLink(item.Manager.FullName, "Details", "Managers", new { id = item.Manager.ID },null)
+            </td>*@
+            <td>
+                @Html.ActionLink(item.Stadium.Name, "Details", "Stadia", new { id = item.Stadium.ID }, null)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

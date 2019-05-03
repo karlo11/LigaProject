@@ -1,0 +1,59 @@
+﻿@using Liga.Models;
+
+@{
+    ViewBag.Title = "League table";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            Club name
+        </th>
+        <th>
+            Wins
+        </th>
+        <th>
+            Losses
+        </th>
+        <th>
+            Draws
+        </th>
+        <th>
+            Goals for
+        </th>
+        <th>
+            Goals against
+        </th>
+        <th>
+            Goal difference
+        </th>
+        <th>
+            Points
+        </th>
+    </tr>
+    @if (Model != null)
+    {
+        int i = 0;
+        foreach (LeagueTable res in Model)
+        {
+            i++;
+    <tr>
+        <td>@i</td>
+        <td>@res.TeamName</td>
+        <td>@res.Wins</td>
+        <td>@res.Losses</td>
+        <td>@res.Draws</td>
+        <td>@res.GoalsFor</td>
+        <td>@res.GoalsAgainst</td>
+        <td>@res.GoalDifference</td>
+        <td>@res.Points</td>
+    </tr>
+        }
+    }
+</table>

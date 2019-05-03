@@ -1,0 +1,58 @@
+﻿@model Liga.Models.Match
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Match</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AwayClubs.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AwayClubs.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeClubs.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeClubs.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoalsScoredHomeTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoalsScoredHomeTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoalsScoredAwayTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoalsScoredAwayTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameDateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
